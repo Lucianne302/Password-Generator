@@ -31,6 +31,48 @@ var getLen = function(){
   return myLen;
 }
 
+//creating character types
+var getCharTypes = function(){
+  //creating character types array set as none
+  var myCharTypes = new Array();
+  myCharTypes[0] = "no"; //upper case
+  myCharTypes[1] = "no"; // lower case
+  myCharTypes[2] = "no"; //numeric
+  myCharTypes[3] = "no"; // special
+
+  // setting temporary variable if true confirm character type
+  var temp=window.confirm("Would you like to include upper case letters?");
+  if (temp === true) {
+    myCharTypes[0] = "yes";
+  }
+  temp=window.confirm("Would you like to include lower case letters?");
+  if (temp === true) {
+    myCharTypes[1] = "yes";
+  }
+  temp=window.confirm("Would you like to include numeric values?");
+  if (temp === true) {
+    myCharTypes[2] = "yes";
+  }
+  temp=window.confirm("Would you like to include special characters?");
+  if (temp === true) {
+    myCharTypes[3] = "yes";
+  }
+
+  //if selected no for all char types, then a message you must pick one will pospulate
+  temp=false;
+  for ( i=0; i<myCharTypes.length; i++ ){
+    if (myCharTypes[i]=="yes"){
+      temp=true;
+      break;
+    }
+  }
+  if (temp==false) {
+    alert("You must select at least one char type");
+    return getCharTypes();
+  }
+
+  return myCharTypes;
+}
 
 
 
@@ -39,7 +81,10 @@ var generatePassword = function() {
   // ask for password length
   var pwdLen = getLen();
   console.log("Your password length will be " + pwdLen);
-
+  
+  // ask for character types to be included
+  var charTypes = getCharTypes();
+  console.log("You have selected the following character types: " + charTypes);
 
 }
 
