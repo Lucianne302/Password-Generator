@@ -18,4 +18,5 @@ Sites used for Knowledge:
 3. Used the following site for Math Functions: https://www.w3schools.com/js/js_math.asp 
 4. To select individual characters: https://www.w3schools.com/JSREF/jsref_charat.asp
 5. to concatenate strings: https://www.w3schools.com/Js/js_operators.asp 
+6. used https://www.geeksforgeeks.org/how-to-generate-a-random-password-using-javascript/ as a reference
 
