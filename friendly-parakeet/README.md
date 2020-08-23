@@ -8,4 +8,14 @@ Notes:
 1. added length of character selection
 2. in the length of characted selection used a regular expression for matching (/^[0-9]\d*$/) using the source, https://www.rexegg.com/regex-quickstart.html 
 3. Added character types
-4. 
+4. added code to generate password based off of choices 
+5. added more comments to code 
+6. added console log to charType
+
+Sites used for Knowledge:
+1. Regular Expressions: https://www.w3schools.com/js/js_regexp.asp 
+2. Regular Expression Cheatsheet: https://www.rexegg.com/regex-quickstart.html 
+3. Used the following site for Math Functions: https://www.w3schools.com/js/js_math.asp 
+4. To select individual characters: https://www.w3schools.com/JSREF/jsref_charat.asp
+5. to concatenate strings: https://www.w3schools.com/Js/js_operators.asp 
+

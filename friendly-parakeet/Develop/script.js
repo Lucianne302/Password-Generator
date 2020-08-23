@@ -14,15 +14,15 @@ THEN my input should be validated and at least one character type should be sele
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria - 3 gen-pwd
 WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page - 4 display
+THEN the password is either displayed in an alert or written to the page
 */
 
-
+//choosing the length of characters
 var getLen = function(){
   var myLen = window.prompt("Select a number between 8 and 128 for your password length");
 
-  var numbers= /^[0-9]\d*$/;
-  if (myLen.match(numbers) && (myLen >=8 && myLen<=128)) {
+  var numbers= /^[0-9]\d*$/; //regular expression to match any number of digits entered
+  if (myLen.match(numbers) && (myLen >=8 && myLen<=128)) { //check to see if myLen contains all numbers and that it is between 8-128
   }else{
     alert("Please enter an integer between 8-128.");
     return getLen();
@@ -45,18 +45,25 @@ var getCharTypes = function(){
   if (temp === true) {
     myCharTypes[0] = "yes";
   }
-  temp=window.confirm("Would you like to include lower case letters?");
+  console.log("Include uppercase - " + myCharTypes[0]);
+
+  temp=window.confirm("Would you like to include lowercase letters?");
   if (temp === true) {
     myCharTypes[1] = "yes";
   }
+  console.log("Include lowercase - " + myCharTypes[1]);
+
   temp=window.confirm("Would you like to include numeric values?");
   if (temp === true) {
     myCharTypes[2] = "yes";
   }
+  console.log("Include numeric value - " + myCharTypes[2]);
+
   temp=window.confirm("Would you like to include special characters?");
   if (temp === true) {
     myCharTypes[3] = "yes";
   }
+  console.log("Include special character - " + myCharTypes[3]);
 
   //if selected no for all char types, then a message you must pick one will pospulate
   temp=false;
@@ -75,8 +82,7 @@ var getCharTypes = function(){
 }
 
 
-
-//choosing the length of characters
+// generate a random password
 var generatePassword = function() {
   // ask for password length
   var pwdLen = getLen();
@@ -86,6 +92,30 @@ var generatePassword = function() {
   var charTypes = getCharTypes();
   console.log("You have selected the following character types: " + charTypes);
 
+  var pwdChars="";
+  if (charTypes[0]=="yes"){ //uppercase
+    pwdChars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+  }
+
+  if (charTypes[1]=="yes"){ //lowercase
+    pwdChars += "abcdefghijklmnopqrstuvwxyz";
+  }
+
+  if (charTypes[2]=="yes"){ //numeric
+    pwdChars += "0123456789";
+  }
+
+  if (charTypes[3]=="yes"){ //special
+    pwdChars += "!@#$%^&*_-+~";
+  }
+
+  var pwd = "";
+  for (i=0; i <=pwdLen; i++) {  //looping over selected password length
+    var char = Math.floor(Math.random() * pwdChars.length + 1);  //generate a number in between 0 and length of string
+    pwd += pwdChars.charAt(char); //append 1 character at a time using the string position generated in char 
+  }
+
+  return pwd;
 }
 
 // Get references to the #generate element
