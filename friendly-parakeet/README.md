@@ -7,4 +7,5 @@ Description/Usage:  This assignment's case is for an employee who needs to gener
 Notes: 
 1. added length of character selection
 2. in the length of characted selection used a regular expression for matching (/^[0-9]\d*$/) using the source, https://www.rexegg.com/regex-quickstart.html 
-3. 
+3. Added character types
+4. 

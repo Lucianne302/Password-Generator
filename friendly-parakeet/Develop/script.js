@@ -31,11 +31,16 @@ var getLen = function(){
   return myLen;
 }
 
+
+
+
 //choosing the length of characters
 var generatePassword = function() {
   // ask for password length
-  var pwdLen=getLen();
+  var pwdLen = getLen();
   console.log("Your password length will be " + pwdLen);
+
+
 }
 
 // Get references to the #generate element
