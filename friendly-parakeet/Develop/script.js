@@ -21,10 +21,6 @@ THEN the password is either displayed in an alert or written to the page - 4 dis
 var getLen = function(){
   var myLen = window.prompt("Select a number between 8 and 128 for your password length");
 
-  if (myLen === "" || myLen === null) {    
-    return getLen();
-  }
-
   var numbers= /^[0-9]\d*$/;
   if (myLen.match(numbers) && (myLen >=8 && myLen<=128)) {
   }else{
